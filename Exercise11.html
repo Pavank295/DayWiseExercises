@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Blog Post</title>
+    <style>
+        body { font-family: Arial; margin: 0; background: #f9f9f9; }
+        header, footer { background: #222; color: white; text-align: center; padding: 10px; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+        .hero { background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97') center/cover no-repeat; color: white; text-align: center; padding: 50px 10px; }
+        .container { display: flex; padding: 20px; gap: 20px; }
+        main { flex: 3; }
+        aside { flex: 1; background: white; padding: 10px; }
+        img { max-width: 100%; }
+        .cta { background: blue; color: white; padding: 10px; text-decoration: none; display: inline-block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>The Beauty of Minimalism</h1>
+    <p>By John Doe | Aug 12, 2025</p>
+</section>
+
+<div class="container">
+    <main>
+        <p>Minimalism is a way of life. It's about focusing on what truly matters.</p>
+
+        <h2>Declutter Your Space</h2>
+        <img src="https://images.app.goo.gl/vKiQVHdm3XL5o9vc9" alt="Decluttered room">
+
+        <h2>Choose Quality</h2>
+        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25" alt="Quality products">
+
+        <h2>Embrace Simplicity</h2>
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Simple lifestyle">
+
+        <a href="#" class="cta">Start Your Journey</a>
+    </main>
+
+    <aside>
+        <h3>About the Author</h3>
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" alt="Author">
+        <p>John writes about minimalism and mindfulness.</p>
+
+        <h3>Recent Posts</h3>
+        <ul>
+            <li><a href="#">5 Tips to Simplify Life</a></li>
+            <li><a href="#">The Power of No</a></li>
+            <li><a href="#">Living With Less</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2025 My Blog</p>
+</footer>
+
+</body>
+</html>
