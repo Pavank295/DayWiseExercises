@@ -1,0 +1,33 @@
+h1 { /* element selector */
+    /* color: brown; */
+    font-size: 40px;
+    text-align: center;
+}
+
+* { /* universal selector */
+    color: green;
+}
+
+#header { /* ID selector */
+    background-color: lightblue;
+}
+
+.class1 { /* class selector */
+    color: aqua;
+    font-style: italic;    
+}
+
+.class2 { /* class selector */
+    color: red;
+    font-weight: bold;
+}
+
+.class3 { /* class selector */
+    color: blue;
+    font-size: 50px;
+}
+
+h1, h2, h3 { /* group selector */
+    color: purple;
+    font-size: 30px;
+}
