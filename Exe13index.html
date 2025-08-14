@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Validation</title>
+    <link rel="stylesheet" href="Exe13style.css">
+</head>
+<body>
+
+<h2>Login Form</h2>
+<form>
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="text" id="email" onblur="validateEmailBlur()">
+    <span id="spEmail" class="error">Please enter a valid email</span>
+
+    <!-- Password -->
+    <label>Password:</label>
+    <input type="password" id="password" onblur="validatePasswordBlur()">
+    <span id="spPass" class="error">Password cannot be empty</span>
+
+    <br>
+    <button type="button" onclick="validateForm()">Login</button>
+</form>
+
+<script src="Exe13script.js"></script>
+</body>
+</html>

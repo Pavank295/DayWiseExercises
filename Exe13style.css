@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    visibility: hidden;
+}
+
+input {
+    display: block;
+    margin-bottom: 5px;
+    padding: 8px;
+    width: 250px;
+}
+
+button {
+    padding: 8px 15px;
+}
