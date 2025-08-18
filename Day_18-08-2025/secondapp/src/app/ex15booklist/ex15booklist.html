@@ -1,0 +1,10 @@
+<p>ex15booklist works!</p>
+<h2>Book List</h2>
+
+<div class="book-grid">
+  <div class="book-card" *ngFor="let book of books">
+    <img [src]="book.image" alt="{{ book.title }}" />
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.description }}</p>
+  </div>
+</div>

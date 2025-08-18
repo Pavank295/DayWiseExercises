@@ -1,0 +1,18 @@
+<!--<p>toogle works!</p>
+<label>
+  <input type="checkbox" [(ngModel)]="ischecked">
+  Show Message!
+</label>
+<div *ngIf="ischecked">
+  <p>Hello, this is a toggled message!</p>
+</div>-->
+<h2>Select a Country</h2>
+
+<select>
+  <option value="">-- Select Country --</option>
+  <option *ngFor="let country of contriesToDisplay">{{ countrylist }}</option>
+</select>
+
+<br><br>
+
+<button (click)="loadcountries()">Load</button>
