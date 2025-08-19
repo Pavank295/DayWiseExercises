@@ -1,0 +1,8 @@
+<div>
+  <h2>Task Manager</h2>
+  <app-task-form [categories]="categories" (taskAdded)="onAddTask($event)"></app-task-form>
+  <app-task-list [tasks]="tasks" (deleteTask)="onDeleteTask($event)"></app-task-list>
+</div>
+
+
+

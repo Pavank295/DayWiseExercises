@@ -1,0 +1,10 @@
+<h3>ngStyle Example</h3>
+<p [ngStyle]="{ 'color': 'red', 'font-size.px': 20 }">
+  This text is styled with ngStyle (static object)
+</p>
+<p [ngStyle]="getStyles()">
+  This text is styled with ngStyle (function returning object)
+</p>
+<button class="btn btn-success mt-2" (click)="toggleHighlight()">
+  Toggle Style
+</button>

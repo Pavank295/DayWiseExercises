@@ -1,0 +1,7 @@
+<h3>ngClass Examples</h3>
+<p [ngClass]="'red-text'">This uses ngClass with a string</p>
+<p [ngClass]="['red-text', 'big-text']">This uses ngClass with an array</p>
+<p [ngClass]="{ 'red-text': applyRed, 'big-text': applyBig }">
+  This uses ngClass with an object (toggle styles below)
+</p>
+<button class="btn btn-primary mt-2" (click)="toggleStyles()">Toggle Object Styles</button>

@@ -1,0 +1,23 @@
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title mb-3">Add Task</h5>
+    <div class="mb-3">
+      <label for="taskDesc" class="form-label">Task Description</label>
+      <input id="taskDesc" type="text" class="form-control"
+             [(ngModel)]="description" placeholder="e.g., Finish report">
+    </div>
+
+    <div class="mb-3">
+      <label for="taskCat" class="form-label">Task Category</label>
+      <select id="taskCat" class="form-select" [(ngModel)]="category">
+        <option value="" disabled selected>Select a category</option>
+        @for (c of categories; track c) {
+          <option [value]="c">{{ c }}</option>
+        }
+      </select>
+    </div>
+
+    <button class="btn btn-primary" (click)="submit()">Add Task</button>
+  </div>
+</div>
+
