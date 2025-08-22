@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <h2>Order History</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Order Date</th>
+        <th>Product</th>
+        <th>Quantity Purchased</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.orderDate | date:'short' }}</td>
+        <td>{{ order.productName }}</td>
+        <td>{{ order.qtyPurchased }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

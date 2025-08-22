@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="m-0">Products</h2>
+  <a routerLink="/products/new" class="btn btn-success">+ Add Product</a>
+</div>
+
+<div *ngIf="loading" class="alert alert-info">Loading...</div>
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+<table class="table table-striped" *ngIf="!loading && products.length">
+  <thead>
+    <tr>
+      <th style="width: 60px;">ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th class="text-end" style="width: 160px;">Price</th>
+      <th style="width: 180px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.description }}</td>
+      <td>{{ p.qty }}</td>
+      <td class="text-end">₹{{ p.price }}</td>
+      <td>
+        <a [routerLink]="['/products', p.id, 'edit']" class="btn btn-sm btn-primary me-2">Edit</a>
+        <button class="btn btn-sm btn-danger" (click)="onDelete(p.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loading && !products.length" class="alert alert-warning">
+  No products yet. Click "Add Product" to create one.
+</div>
+
