@@ -1,0 +1,11 @@
+<div style="text-align:center; margin-top: 50px;">
+  <h2>Centigrade → Fahrenheit Converter</h2>
+
+  <input type="number" [(ngModel)]="tempC" placeholder="Enter °C" />
+
+  <br /><br />
+
+  @if (tempC() !== null) {
+    <p>{{ tempC() | cToF }}</p>
+  }
+</div>
