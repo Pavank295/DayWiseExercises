@@ -1,0 +1,7 @@
+<h2>Reverse Text (FormControl)</h2>
+
+<label for="txt">Type something:</label>
+<input id="txt" type="text" [formControl]="inputCtrl" />
+
+<p><strong>Reversed:</strong> {{ reversed$ | async }}</p>
+

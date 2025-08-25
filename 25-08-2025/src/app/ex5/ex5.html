@@ -1,0 +1,33 @@
+<h2>Ex5: Form Validation Example</h2>
+
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+  
+  <div>
+    <label>First Name:</label>
+    <input type="text" formControlName="fName" />
+
+    @if((fg.controls['fName'].invalid) && (fg.controls['fName'].touched || fg.controls['fName'].dirty)) {
+      @if(fg.controls['fName'].errors?.['required']) {
+        <span style="color:red">First Name is Required</span>
+      }
+    }
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input type="text" formControlName="email" />
+
+    @if((fg.controls['email'].invalid) && (fg.controls['email'].touched || fg.controls['email'].dirty)) {
+      @if(fg.controls['email'].errors?.['required']) {
+        <span style="color:red">Email is Required</span>
+      }
+      @if(fg.controls['email'].errors?.['email']) {
+        <span style="color:red">Email format is not valid</span>
+      }
+    }
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="fg.invalid">Save</button>
+  </div>
+</form>
