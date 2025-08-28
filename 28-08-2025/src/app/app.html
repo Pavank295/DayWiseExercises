@@ -1,0 +1,8 @@
+<div style="text-align:center; margin-top:40px;">
+  <h1>Palindrome tester</h1>
+  <input #txt placeholder="Type text" />
+  <button (click)="result = isPalindrome(txt.value)">Test</button>
+  <p *ngIf="result !== undefined">
+    Result: {{ result ? 'Palindrome' : 'Not a palindrome' }}
+  </p>
+</div>
