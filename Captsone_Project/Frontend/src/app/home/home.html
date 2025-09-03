@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Find flights</h2>
+
+  <div class="row mt-3">
+    <div class="col-3">
+      <label class="label">From (IATA)</label>
+      <input class="input" [(ngModel)]="from" placeholder="e.g., HYD" maxlength="3" />
+    </div>
+    <div class="col-3">
+      <label class="label">To (IATA)</label>
+      <input class="input" [(ngModel)]="to" placeholder="e.g., BLR" maxlength="3" />
+    </div>
+    <div class="col-3">
+      <label class="label">Date</label>
+      <input class="input" type="date" [(ngModel)]="date" />
+    </div>
+    <div class="col-3" style="display:flex; align-items:flex-end;">
+      <button class="btn btn-primary" (click)="search()">Search</button>
+    </div>
+  </div>
+
+  <p class="mt-3">Tip: The backend expects uppercase IATA codes (e.g., HYD, BLR).</p>
+</div>

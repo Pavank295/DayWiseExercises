@@ -1,0 +1,6 @@
+<div class="container" *ngIf="booking$ | async as b">
+  <h2>Payment Successful 🎉</h2>
+  <p>Your booking (ID: {{b.id}}) is confirmed.</p>
+  <p>Transaction ID: <strong>{{b.transactionId}}</strong></p>
+  <a routerLink="/" class="btn btn-primary mt-3">Book another</a>
+</div>
