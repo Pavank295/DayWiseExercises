@@ -1,0 +1,84 @@
+<div class="wrap" role="main">
+  <header class="header">
+    <h1 style="text-align: center;" class="logo">✈️ Flight Booking Portal</h1>
+  </header>
+
+  <main class="main-container">
+    <section class="card booking-card" aria-labelledby="booking-heading">
+      <div class="header-bar">
+        <div class="brand">
+          <div class="logo-circle" aria-hidden="true">FLY</div>
+          <div class="title">
+            <h1 id="booking-heading">Booking Summary</h1>
+            <p>Review your booking details and passenger information</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">Passenger</div>
+          <div class="value">{{ booking.passengerName }}</div>
+        </div>
+
+        <div class="info-item">
+          <div class="label">Age / Gender</div>
+          <div class="value">{{ booking.passengerAge }} yrs • {{ booking.gender }}</div>
+        </div>
+
+        <div class="info-item">
+          <div class="label">Email</div>
+          <div class="value">{{ booking.email }}</div>
+        </div>
+
+        <div class="info-item">
+          <div class="label">Phone</div>
+          <div class="value">{{ booking.phone }}</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Trip Details</h3>
+        <div class="flight-card">
+          <div class="badge">✈︎</div>
+
+          <div class="flight-meta">
+            <div class="route">{{ flight.source }} → {{ flight.destination }}</div>
+            <div class="when">{{ flight.date }} • {{ flight.airline || 'Airline' }}</div>
+          </div>
+
+          <div class="flight-stats">
+            <div class="price">₹{{ booking.totalPrice }}</div>
+            <div>x {{ booking.numberOfTicket }} tickets</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="summary">
+      <h4>Payment Summary</h4>
+      <div class="price-big">₹{{ booking.totalPrice }}</div>
+      <div class="breakdown">
+        <div class="line total">
+          <div>Total</div>
+          <div>₹{{ booking.totalPrice }}</div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <button class="btn btn-primary" (click)="proceedToPay()">Proceed to Payment</button>
+        <button class="btn btn-secondary">Receipt</button>
+      </div>
+
+      <div class="tiny">By continuing you agree to the carrier's terms & conditions.</div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p style="text-align: center;">&copy; 2025 Flight Booking Portal | All Rights Reserved</p>
+    <p style="text-align: center;">
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </p>
+  </footer>
+</div>

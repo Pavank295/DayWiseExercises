@@ -1,0 +1,106 @@
+.booking-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #f9fafc;
+}
+.filters {
+  width: 250px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 15px;
+  height: fit-content;
+}
+
+.applied-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.filter-tag {
+  background: #eaf4ff;
+  color: #ff3c00;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Flights */
+.flights {
+  flex: 1;
+}
+
+.flight-row {
+  display: grid;
+  grid-template-columns: 180px 120px 160px 120px 160px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.airline img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.airline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.times h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.times span {
+  font-size: 14px;
+  color: #555;
+}
+
+.duration {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+.price-box {
+  text-align: right;
+}
+
+.price-box h3 {
+  margin: 0;
+  color: #222;
+}
+
+.book-btn {
+  margin-top: 6px;
+  background: #ff3700;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #00b3a7;
+}

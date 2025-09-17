@@ -1,0 +1,50 @@
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <h1 class="logo">Flight Booker</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Bookings</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SEARCH SECTION -->
+<main class="container">
+  <div class="search-card">
+    <h2>Search Flights</h2>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>From</label>
+        <input [(ngModel)]="src" placeholder="Enter departure city" />
+      </div>
+
+      <div class="form-field">
+        <label>To</label>
+        <input [(ngModel)]="dst" placeholder="Enter destination city" />
+      </div>
+    </div>
+
+    <div class="swap-row">
+      <button class="swap-btn" (click)="swapLocations()">🔄 Swap</button>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label>Departure Date</label>
+        <input type="date" [(ngModel)]="date" />
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="search-btn" (click)="onSearch()">Search Flights</button>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2025 Flight Booker · All Rights Reserved
+</footer>

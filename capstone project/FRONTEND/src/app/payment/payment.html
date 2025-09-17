@@ -1,0 +1,72 @@
+<div class="payment-page">
+  <header class="header">
+    <h1 class="logo">✈️ Flight Booking Portal</h1>
+    <nav>
+      <a routerLink="/">Home</a>
+      <a routerLink="/bookings">My Bookings</a>
+      <a routerLink="/support">Support</a>
+    </nav>
+  </header>
+
+  <main class="payment-container">
+    <h2 class="title">💳 Complete Your Payment</h2>
+
+    <form #paymentForm="ngForm" (ngSubmit)="pay()" class="payment-form">
+      <div class="form-group">
+        <label for="modeOfPayment">Payment Method</label>
+        <select
+          id="modeOfPayment"
+          name="modeOfPayment"
+          [(ngModel)]="payment.modeOfPayment"
+          required
+        >
+          <option value="" disabled selected>Select Payment Mode</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="Net Banking">Net Banking</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="accountNumber">Card/Account Number</label>
+        <input
+          type="text"
+          id="accountNumber"
+          name="accountNumber"
+          [(ngModel)]="payment.accountNumber"
+          required
+          minlength="8"
+          placeholder="Enter Card / Account Number"
+        />
+      </div>
+
+      @if (payment.modeOfPayment !== 'UPI') {
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input
+            type="password"
+            id="cvv"
+            name="cvv"
+            [(ngModel)]="payment.cvv"
+            required
+            maxlength="3"
+            pattern="[0-9]{3}"
+            placeholder="XXX"
+          />
+        </div>
+      }
+
+      <button type="submit" class="pay-btn" [disabled]="!paymentForm.form.valid">
+        Pay {{ payment.amount | currency:'INR' }}
+      </button>
+    </form>
+  </main>
+
+  <footer style="text-align: center;" class="footer">
+    <p>&copy; 2025 Flight Booking Portal | All Rights Reserved</p>
+    <p>
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p>
+  </footer>
+</div>

@@ -1,0 +1,79 @@
+<div class="booking-container">
+  @if (searched) {
+    <aside class="filters">
+      <h3>Applied Filters</h3>
+      <div class="applied-filters">
+        @if (timeFilters.early) {
+          <span class="filter-tag">Early Departure</span>
+        }
+        @if (timeFilters.late) {
+          <span class="filter-tag">Late Departure</span>
+        }
+        @for (a of airlines; track a) {
+          @if (airlineFilters[a]) {
+            <span class="filter-tag">{{ a }}</span>
+          }
+        }
+        <button class="clear-btn"
+                (click)="airlineFilters = {}; timeFilters={early:false,late:false}; applyFilters()">
+          CLEAR ALL
+        </button>
+      </div>
+
+      <h3>Popular Filters</h3>
+      <section>
+        <mat-checkbox [(ngModel)]="timeFilters.early" (change)="applyFilters()">
+          Morning Departures (00:00 - 11:59)
+        </mat-checkbox>
+        <mat-checkbox [(ngModel)]="timeFilters.late" (change)="applyFilters()">
+          Late Departures (12:00 - 23:59)
+        </mat-checkbox>
+      </section>
+
+      <section>
+        <h4>Airlines</h4>
+        @for (airline of airlines; track airline) {
+          <mat-checkbox [(ngModel)]="airlineFilters[airline]" (change)="applyFilters()">
+            {{ airline }}
+          </mat-checkbox>
+        }
+      </section>
+    </aside>
+
+    <main class="flights">
+      @if (filteredFlights.length > 0) {
+        @for (f of filteredFlights; track f.id) {
+          <div class="flight-row">
+            <div class="airline">
+              <span>{{ f.airline }}</span>
+              <small>{{ f.flightNumber }}</small>
+            </div>
+
+            <div class="times">
+              <h3>{{ f.departureTime }}</h3>
+              <span>{{ f.source }}</span>
+            </div>
+
+            <div class="duration">
+              <span>➡</span>
+              <p>{{ getDuration(f.departureTime, f.arrivalTime) }}</p>
+              <small>Non Stop</small>
+            </div>
+
+            <div class="times">
+              <h3>{{ f.arrivalTime }}</h3>
+              <span>{{ f.destination }}</span>
+            </div>
+
+            <div class="price-box">
+              <h3>₹{{ f.price }}</h3>
+              <button class="book-btn"  (click)="onBook(f)">Book</button>
+            </div>
+          </div>
+        }
+      } @else {
+        <p class="no-result">No flights match your filters.</p>
+      }
+    </main>
+  }
+</div>
